@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>{{ data.dialogTitle }}</h1>
+<div mat-dialog-content>
+  <div class="example-container" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Table Name</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="10"
+        formControlName="tableName"
+        placeholder="Ex. Nougat"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="bar">Bar</mat-option>
+        <mat-option value="table">Table</mat-option>
+        <mat-option value="number">Number</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="10"
+        formControlName="name"
+        placeholder="Ex. Nougat"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Refresh time</mat-label>
+      <mat-select formControlName="refreshTime">
+        <mat-option value="5m">5m</mat-option>
+        <mat-option value="30m">30m</mat-option>
+        <mat-option value="1h">1 hour</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <hr />
+
+    <ng-template appConfiguratorCreator></ng-template>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-raised-button color="primary" (click)="onSaveClick()">
+    Save
+  </button>
+</div>
